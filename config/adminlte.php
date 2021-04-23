@@ -245,6 +245,23 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'PERPUSTAKAAN'],
+        [
+            'text' => 'Buku',
+            'icon' => 'fas fa-fw fa-book',
+            'submenu' => [
+                [
+                    'text' => 'Tambah Buku',
+                    'route' => 'tambah-buku',
+                    'icon' => 'fas fa-fw fa-book',
+                ],
+                [
+                    'text' => 'Daftar Buku',
+                    'route' => 'daftar-buku',
+                    'icon' => 'fas fa-fw fa-book',
+                ],
+            ]
+        ]
     ],
 
     /*
