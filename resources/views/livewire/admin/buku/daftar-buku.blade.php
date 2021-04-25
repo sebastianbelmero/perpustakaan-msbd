@@ -55,10 +55,9 @@
                         <td class="{{ $e ? '' : 'd-none' }}">{{ $item->tahun }}</td>
                         <td class="{{ $f ? '' : 'd-none' }}">{{ $item->edisi }}</td>
                         <td class="{{ $g ? '' : 'd-none' }}">{{ $item->kategori }}</td>
-                        <td>
-                            <a href="#" class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#exampleModal" wire:model="pilih({{ $item->id }})"><i class="fas fa-search"></i></a>
-                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white"><i class="fas fa-trash"></i></button>
-
+                        <td class="d-flex">
+                            <a href="#" class="btn btn-primary btn-sm text-white col-6" data-toggle="modal" data-target="#exampleModal" wire:model="pilih({{ $item->id }})"><i class="fas fa-search"></i></a>
+                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white col-6 ml-2"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
