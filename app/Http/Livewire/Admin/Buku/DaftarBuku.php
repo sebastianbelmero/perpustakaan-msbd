@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Buku;
 
 use App\Models\Vbook;
 use Livewire\Component;
+use App\Models\Book;
 use Livewire\WithPagination;
 
 class DaftarBuku extends Component
@@ -28,15 +29,15 @@ class DaftarBuku extends Component
     public function render()
     {
         $ambil = Vbook::where('judul', 'like', "%$this->search%")
-        ->orWhere('penerbit', 'like', "%$this->search%")
-        ->orWhere('pengarang', 'like', "%$this->search%")
-        ->orWhere('isbn', 'like', "%$this->search%");
+            ->orWhere('penerbit', 'like', "%$this->search%")
+            ->orWhere('pengarang', 'like', "%$this->search%")
+            ->orWhere('isbn', 'like', "%$this->search%");
         $collection = $ambil->simplePaginate($this->tampil);
         $data = $ambil->count();
         $ada = $collection->count();
         return view('livewire.admin.buku.daftar-buku', compact('collection', 'data', 'ada'))
-        ->extends('adminlte::page')
-        ->section('content');
+            ->extends('adminlte::page')
+            ->section('content');
     }
 
     public function pilih($id)
@@ -44,4 +45,9 @@ class DaftarBuku extends Component
         $this->id_buku = $id;
     }
 
+    public function hapusBuku($itemId)
+    {
+        $content = Book::find($itemId);
+        $content->delete();
+    }
 }
