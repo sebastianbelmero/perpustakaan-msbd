@@ -261,6 +261,11 @@ return [
                     'icon' => 'fas fa-fw fa-book',
                 ],
             ]
+        ],
+        [
+            'text' => 'Kategori',
+            'route' => 'kategori',
+            'icon' => 'fas fa-fw fa-book',
         ]
     ],
 

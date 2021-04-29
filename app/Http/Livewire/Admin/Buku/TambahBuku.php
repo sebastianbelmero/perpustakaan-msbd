@@ -25,21 +25,21 @@ class TambahBuku extends Component
             $this->email = $data['Email'];
         }
         return view('livewire.admin.buku.tambah-buku')
-        ->extends('adminlte::page')
-        ->section('content');
+            ->extends('adminlte::page')
+            ->section('content');
     }
 
     public function setIsbn($isbn)
     {
         $this->isbn = $isbn;
     }
-    
+
     public function cari()
     {
         if ($this->judul != '') {
             $datass = Http::get("https://isbn.perpusnas.go.id/Account/GetBuku?kd1=Judul&kd2=$this->judul&limit=5&offset=0&search=");
-            $this -> datas = $datass['rows'];
-            $this -> tampil = $datass['total'];
+            $this->datas = $datass['rows'];
+            $this->tampil = $datass['total'];
         }
     }
 
@@ -60,16 +60,7 @@ class TambahBuku extends Component
 
         ]);
 
-        $this->isbn = "";
-        $this->judul = "";
-        $this->penerbit = "";
-        $this->pengarang = "";
-        $this->tahun = "";
-        $this->tglMasuk = "";
-        $this->edisi = "";
-        $this->website = "";
-        $this->email = "";
-        $this->jumlah = "";
+        $this->reset();
         $this->emit('Buku-ditambahkan');
     }
 }
