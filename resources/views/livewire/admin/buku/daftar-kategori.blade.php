@@ -35,11 +35,19 @@
                     @foreach ($kategories as $kategori)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        @if($updateId !== $kategori->id)
                         <td>{{ $kategori->nama }}</td>
                         <td class="d-flex">
-                            <button class="btn btn-warning btn-sm text-white col-6"><i class="fas fa-edit"></i></button>
+                            <button wire:click="showFormKategori({{ $kategori -> id }})" class="btn btn-warning btn-sm text-white col-6"><i class="fas fa-edit"></i></button>
                             <button onclick="return confirm('Apakah anda yakin ingin menghapus kategori {{ $kategori->nama }} ???') || event.stopImmediatePropagation()" wire:click="hapusKategori({{ $kategori->id }})" class="btn btn-danger btn-sm text-white col-6 ml-2"><i class="fas fa-trash"></i></button>
                         </td>
+                        @endif
+                        @if($updateId === $kategori->id)
+                        <td><input type="text" wire:model="nama" class="form-control" id="labelNama" /></td>
+                        <td class="d-flex">
+                            <button wire:click="ubahKategori({{ $kategori -> id }})" class="btn btn-primary btn-sm text-white">Ubah</button>
+                        </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

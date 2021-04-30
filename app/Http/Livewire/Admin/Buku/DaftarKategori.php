@@ -13,7 +13,8 @@ class DaftarKategori extends Component
     protected $paginationTheme = 'bootstrap';
     protected $listeners = ['Kategori-ditambahkan' => '$refresh'];
     public $tampil = 10;
-    public $nama;
+    public $updateId = 0;
+    public $nama = 0;
 
 
     public function render()
@@ -25,9 +26,26 @@ class DaftarKategori extends Component
         return view('livewire.admin.buku.daftar-kategori', compact('kategories', 'data', 'ada'));
     }
 
+    public function showFormKategori($kategoriId)
+    {
+        $kategori = Category::find($kategoriId);
+        $this->nama = $kategori->nama;
+        $this->updateId = $kategoriId;
+    }
+
+    public function ubahKategori($kategoriId)
+    {
+        $kategori = Category::find($kategoriId);
+        $kategori->nama = $this->nama;
+        $kategori->save();
+        $this->updateId = 0;
+    }
+
+
+
     public function hapusKategori($kategoriId)
     {
-        $content = Category::find($kategoriId);
-        $content->delete();
+        $kategori = Category::find($kategoriId);
+        $kategori->delete();
     }
 }

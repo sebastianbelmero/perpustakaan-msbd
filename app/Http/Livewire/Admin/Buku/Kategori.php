@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class Kategori extends Component
 {
+
     public $nama;
     public function render()
     {
