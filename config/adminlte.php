@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Perpustakaan',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>PERPUSTAKAAN</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -252,7 +252,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tambah Buku',
-                    'route' => 'tambah-buku',
+                    'route' => 'pilih-buku',
                     'icon' => 'fas fa-fw fa-book',
                 ],
                 [

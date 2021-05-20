@@ -2,25 +2,25 @@
     <div wire:loading wire:target="cari" class="spinner-border text-primary" role="status">
         <span class="sr-only">Loading...</span>
     </div>
-    <form wire:submit.prevent="cari">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-md-6">
                 <div class="form-group" style="position: relative;">
                     <label for="labelJudul">Judul</label>
                     <input type="text" wire:model="judul" class="form-control" id="labelJudul" placeholder="Input Judul" />
-                    <ul class="list-group w-100 {{ $judul != '' ? '' : 'd-none' }}" style="position: absolute; z-index: 1">
-                        @if ($datas != '' && $isbn == '')    
-                        <li class="list-group-item active">Menampilkan 5 dari {{ $tampil }} Judul</li>
-                        @foreach ($datas as $data)
-                        <button wire:click="setIsbn('{{$data['ISBN']}}')" class="list-group-item text-left">{{ $data['Judul'] }}</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group" style="position: relative;">
+                    <label for="labelKategori">Kategori</label>
+                    <select wire:model="kategori" class="form-control">
+                        <option value="">Pilih Kategori</option>
+                        @foreach ($collection as $item)
+                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
                         @endforeach
-                        @endif
-                    </ul>
+                    </select>
                 </div>
             </div>
         </div>
-    </form>
-    <form>
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="form-group">
@@ -80,11 +80,10 @@
             <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label class="text-white">.</label>
-                    <button type="submit" wire:click="tambahBuku" class="btn btn-primary btn-block">
+                    <button wire:click="tambahBuku" class="btn btn-primary btn-block">
                         Tambah Buku
                     </button>
                 </div>
             </div>
         </div>
-    </form>
 </div>

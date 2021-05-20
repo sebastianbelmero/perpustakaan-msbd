@@ -4,12 +4,17 @@ namespace App\Http\Livewire\Admin\Buku;
 
 use Livewire\Component;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Support\Facades\Http;
 
 class TambahBuku extends Component
 {
-    public $isbn, $judul, $penerbit, $pengarang, $tahun, $tglMasuk, $edisi, $website, $email, $jumlah;
+    public $judul, $penerbit, $pengarang, $tahun, $tglMasuk, $edisi, $website, $email, $jumlah, $kategori;
     public $datas, $tampil;
+
+    public $isbn;
+
+    protected $queryString = ['isbn'];
 
     public function render()
     {
@@ -24,7 +29,8 @@ class TambahBuku extends Component
             $this->website = $data['Website'];
             $this->email = $data['Email'];
         }
-        return view('livewire.admin.buku.tambah-buku')
+        $collection = Category::all();
+        return view('livewire.admin.buku.tambah-buku', compact('collection'))
             ->extends('adminlte::page')
             ->section('content');
     }
@@ -32,15 +38,6 @@ class TambahBuku extends Component
     public function setIsbn($isbn)
     {
         $this->isbn = $isbn;
-    }
-
-    public function cari()
-    {
-        if ($this->judul != '') {
-            $datass = Http::get("https://isbn.perpusnas.go.id/Account/GetBuku?kd1=Judul&kd2=$this->judul&limit=5&offset=0&search=");
-            $this->datas = $datass['rows'];
-            $this->tampil = $datass['total'];
-        }
     }
 
     public function tambahBuku()
@@ -56,7 +53,8 @@ class TambahBuku extends Component
             'edisi' => $this->edisi,
             'website' => $this->website,
             'email' => $this->email,
-            'jumlah' => $this->jumlah
+            'jumlah' => $this->jumlah,
+            'id_kategori' => $this->kategori
 
         ]);
 

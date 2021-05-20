@@ -18,6 +18,7 @@ class Book extends Model
         'edisi',
         'website',
         'email',
-        'jumlah'
+        'jumlah',
+        'id_kategori'
     ];
 }
