@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\Buku\DaftarBuku;
 use App\Http\Livewire\Admin\Buku\Kategori;
 use App\Http\Livewire\Admin\Buku\PilihBuku;
 use App\Http\Livewire\Admin\Buku\TambahBuku;
+use App\Http\Livewire\Admin\Buku\UbahBuku;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,10 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/buku', DaftarBuku::class)->name('daftar-buku');
 Route::get('/buku/tambah-buku', TambahBuku::class)->name('tambah-buku');
 Route::get('/buku/pilih-buku', PilihBuku::class)->name('pilih-buku');
+Route::get('/buku/edit-buku/{idnya}', UbahBuku::class)->name('edit-buku');
+// Route::get('/buku/edit-buku/{id}', function ($id) {
+//     return 'User ' . $id;
+// });
 Route::get('/buku/kategori', function () {
     return view('admin/buku/kategori');
 })->name('kategori');

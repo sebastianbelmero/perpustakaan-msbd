@@ -16,6 +16,17 @@ class DaftarBuku extends Component
 
     public $search;
     public $tampil = 10;
+    public $updateId = 0;
+    public $judul = 0;
+    public $penerbit = 0;
+    public $pengarang = 0;
+    public $tahun = 0;
+    public $tglMasuk = 0;
+    public $edisi = 0;
+    public $website = 0;
+    public $email = 0;
+    public $jumlah = 0;
+    public $kategori = 0;
 
     public $a = true;
     public $b = true;
@@ -45,9 +56,40 @@ class DaftarBuku extends Component
         $this->id_buku = $id;
     }
 
+    public function showFormBook($itemId)
+    {
+        $item = Book::find($itemId);
+        $this->judul = $item->judul;
+        $this->penerbit = $item->penerbit;
+        $this->pengarang = $item->pengarang;
+        $this->tahun = $item->tahun;
+        $this->tglMasuk = $item->tglMasuk;
+        $this->edisi = $item->edisi;
+        $this->website = $item->website;
+        $this->email = $item->email;
+        $this->jumlah = $item->jumlah;
+        $this->kategori = $item->kategori;
+        $this->updateId = $itemId;
+    }
+    public function updateBook($itemId)
+    {
+        $item = Book::find($itemId);
+        $item->judul = $this->judul;
+        $item->pengarang = $this->pengarang;
+        $item->tahun = $this->tahun;
+        $item->tglMasuk = $this->tglMasuk;
+        $item->edisi = $this->edisi;
+        $item->website = $this->website;
+        $item->email = $this->email;
+        $item->jumlah = $this->jumlah;
+        $item->kategori = $this->kategori;
+        $item->save();
+        $this->updateId = 0;
+    }
+
     public function hapusBuku($itemId)
     {
-        $content = Book::find($itemId);
-        $content->delete();
+        $item = Book::find($itemId);
+        $item->delete();
     }
 }

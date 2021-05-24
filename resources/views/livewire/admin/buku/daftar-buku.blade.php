@@ -48,6 +48,7 @@
                     @foreach ($collection as $item)
                     <tr>
                         <td>{{ $no++ }}</td>
+
                         <td class="{{ $a ? '' : 'd-none' }}">{{ Str::limit($item->judul, 50) }}</td>
                         <td class="{{ $b ? '' : 'd-none' }}">{{ $item->isbn }}</td>
                         <td class="{{ $c ? '' : 'd-none' }}">{{ $item->penerbit }}</td>
@@ -55,10 +56,25 @@
                         <td class="{{ $e ? '' : 'd-none' }}">{{ $item->tahun }}</td>
                         <td class="{{ $f ? '' : 'd-none' }}">{{ $item->edisi }}</td>
                         <td class="{{ $g ? '' : 'd-none' }}">{{ $item->kategori }}</td>
+                        @if ($updateId !== $item->Id)
                         <td class="d-flex">
-                            <a href="#" class="btn btn-primary btn-sm text-white col-6" data-toggle="modal" data-target="#exampleModal" wire:model="pilih({{ $item->id }})"><i class="fas fa-search"></i></a>
-                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white col-6 ml-2"><i class="fas fa-trash"></i></button>
+                            <a href="#" class="btn btn-primary btn-sm text-white col-4" data-toggle="modal" data-target="#exampleModal" wire:model="pilih({{ $item->id }})"><i class="fas fa-search"></i></a>
+                            <a href="{{ route('edit-buku', $item->id) }}" class="btn btn-warning btn-sm text-white col-4 ml-1"><i class="fas fa-edit"></i></a>
+                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white col-4 ml-1"><i class="fas fa-trash"></i></button>
                         </td>
+                        @endif
+                        @if ($updateId === $item->id)
+                        <td><input type="text" wire:model="judul" class="form-control" id="labeljudul" /></td>
+                        <td><input type="text" wire:model="isbn" class="form-control" id="labelisbn" /></td>
+                        <td><input type="text" wire:model="penerbit" class="form-control" id="labelpenerbit" /></td>
+                        <td><input type="text" wire:model="pengarang" class="form-control" id="labelpengarang" /></td>
+                        <td><input type="text" wire:model="tahun" class="form-control" id="labeltahun" /></td>
+                        <td><input type="text" wire:model="edisi" class="form-control" id="labeledisi" /></td>
+                        <td><input type="text" wire:model="kategori" class="form-control" id="labelkategori" /></td>
+                        <td class="d-flex">
+                            <button wire:click="updateBook" class="btn btn-primary btn-sm text-white col-4 ml-1">Ubah</button>
+                        </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
