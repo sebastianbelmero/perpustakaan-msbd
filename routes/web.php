@@ -27,15 +27,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/buku', DaftarBuku::class)->name('daftar-buku');
-Route::get('/buku/tambah-buku', TambahBuku::class)->name('tambah-buku');
-Route::get('/buku/pilih-buku', PilihBuku::class)->name('pilih-buku');
-Route::get('/buku/edit-buku/{idnya}', UbahBuku::class)->name('edit-buku');
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/buku', DaftarBuku::class)->name('daftar-buku');
+    Route::get('/buku/tambah-buku', TambahBuku::class)->name('tambah-buku');
+    Route::get('/buku/pilih-buku', PilihBuku::class)->name('pilih-buku');
+    Route::get('/buku/edit-buku/{idnya}', UbahBuku::class)->name('edit-buku');
+    Route::get('/buku/kategori', function () {
+        return view('admin/buku/kategori');
+    })->name('kategori');
+});
+Route::get('/bukan-admin', function () {
+    return view('bukan-admin');
+})->name('bukan-admin');
 // Route::get('/buku/edit-buku/{id}', function ($id) {
 //     return 'User ' . $id;
 // });
-Route::get('/buku/kategori', function () {
-    return view('admin/buku/kategori');
-})->name('kategori');

@@ -37,6 +37,8 @@ class DaftarBuku extends Component
     public $g = false;
     public $id_buku;
 
+    public $edit = [];
+
     public function render()
     {
         $ambil = Vbook::where('judul', 'like', "%$this->search%")
@@ -49,11 +51,6 @@ class DaftarBuku extends Component
         return view('livewire.admin.buku.daftar-buku', compact('collection', 'data', 'ada'))
             ->extends('adminlte::page')
             ->section('content');
-    }
-
-    public function pilih($id)
-    {
-        $this->id_buku = $id;
     }
 
     public function showFormBook($itemId)

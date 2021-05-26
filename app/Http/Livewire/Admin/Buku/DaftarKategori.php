@@ -16,12 +16,16 @@ class DaftarKategori extends Component
     public $updateId = 0;
     public $nama = 0;
 
+    public $search;
+
+    protected $queryString = ['search'];
+
 
     public function render()
     {
 
-        $kategories = Category::simplePaginate($this->tampil);
-        $data = Category::all()->count();
+        $kategories = Category::where('nama', 'like', '%'.$this->search.'%')->simplePaginate($this->tampil);
+        $data = Category::where('nama', 'like', '%'.$this->search.'%')->count();
         $ada = $kategories->count();
         return view('livewire.admin.buku.daftar-kategori', compact('kategories', 'data', 'ada'));
     }

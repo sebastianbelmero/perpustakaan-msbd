@@ -56,25 +56,10 @@
                         <td class="{{ $e ? '' : 'd-none' }}">{{ $item->tahun }}</td>
                         <td class="{{ $f ? '' : 'd-none' }}">{{ $item->edisi }}</td>
                         <td class="{{ $g ? '' : 'd-none' }}">{{ $item->kategori }}</td>
-                        @if ($updateId !== $item->Id)
                         <td class="d-flex">
-                            <a href="#" class="btn btn-primary btn-sm text-white col-4" data-toggle="modal" data-target="#exampleModal" wire:model="pilih({{ $item->id }})"><i class="fas fa-search"></i></a>
-                            <a href="{{ route('edit-buku', $item->id) }}" class="btn btn-warning btn-sm text-white col-4 ml-1"><i class="fas fa-edit"></i></a>
-                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white col-4 ml-1"><i class="fas fa-trash"></i></button>
+                            <a href="{{ route('edit-buku', $item->id) }}" class="btn btn-warning btn-sm text-white ml-1"><i class="fas fa-edit"></i></a>
+                            <button onclick="return confirm('Apakah anda yakin ingin menghapus buku {{ $item->judul }} ???') || event.stopImmediatePropagation()" wire:click="hapusBuku({{ $item->id }})" class="btn btn-danger btn-sm text-white ml-1"><i class="fas fa-trash"></i></button>
                         </td>
-                        @endif
-                        @if ($updateId === $item->id)
-                        <td><input type="text" wire:model="judul" class="form-control" id="labeljudul" /></td>
-                        <td><input type="text" wire:model="isbn" class="form-control" id="labelisbn" /></td>
-                        <td><input type="text" wire:model="penerbit" class="form-control" id="labelpenerbit" /></td>
-                        <td><input type="text" wire:model="pengarang" class="form-control" id="labelpengarang" /></td>
-                        <td><input type="text" wire:model="tahun" class="form-control" id="labeltahun" /></td>
-                        <td><input type="text" wire:model="edisi" class="form-control" id="labeledisi" /></td>
-                        <td><input type="text" wire:model="kategori" class="form-control" id="labelkategori" /></td>
-                        <td class="d-flex">
-                            <button wire:click="updateBook" class="btn btn-primary btn-sm text-white col-4 ml-1">Ubah</button>
-                        </td>
-                        @endif
                     </tr>
                     @endforeach
                 </tbody>
@@ -83,27 +68,6 @@
         <!-- /.card-body -->
         <div class="card-footer clearfix">
             {{ $collection->links() }}
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>

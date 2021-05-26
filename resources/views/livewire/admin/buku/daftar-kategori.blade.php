@@ -25,7 +25,6 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th style="width: 10px">#</th>
                         <th>Nama Kategori</th>
                         <th style="width: 40px">Aksi</th>
                     </tr>
@@ -34,7 +33,6 @@
                 <tbody>
                     @foreach ($kategories as $kategori)
                     <tr>
-                        <td>{{ $no++ }}</td>
                         @if($updateId !== $kategori->id)
                         <td>{{ $kategori->nama }}</td>
                         <td class="d-flex">
@@ -43,10 +41,16 @@
                         </td>
                         @endif
                         @if($updateId === $kategori->id)
-                        <td><input type="text" wire:model="nama" class="form-control" id="labelNama" /></td>
-                        <td class="d-flex">
-                            <button wire:click="ubahKategori({{ $kategori -> id }})" class="btn btn-primary btn-sm text-white">Ubah</button>
-                        </td>
+                        <td>
+                                <form wire:submit.prevent="ubahKategori({{ $kategori -> id }})">
+                                <input type="text" wire:model.defer="nama" class="form-control" id="labelNama" />
+                            </td>
+                            <td class="d-flex">
+                                <button type="submit" class="btn btn-primary btn-sm text-white">
+                                    Ubah
+                                </button>
+                            </form>
+                            </td>
                         @endif
                     </tr>
                     @endforeach

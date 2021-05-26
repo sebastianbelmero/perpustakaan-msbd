@@ -60,5 +60,6 @@ class TambahBuku extends Component
 
         $this->reset();
         $this->emit('Buku-ditambahkan');
+        return redirect()->route('daftar-buku');
     }
 }
