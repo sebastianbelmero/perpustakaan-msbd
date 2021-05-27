@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Buku;
 
 use App\Models\Book;
+use App\Models\Category;
 use Livewire\Component;
 
 
@@ -38,7 +39,7 @@ class UbahBuku extends Component
         $this->website = $item->website;
         $this->email = $item->email;
         $this->jumlah = $item->jumlah;
-        $this->kategori = $item->kategori;
+        $this->kategori = $item->id_kategori;
     }
     public function updateBook()
     {
@@ -51,12 +52,14 @@ class UbahBuku extends Component
         $item->website = $this->website;
         $item->email = $this->email;
         $item->jumlah = $this->jumlah;
-        $item->kategori = $this->kategori;
+        $item->id_kategori = $this->kategori;
         $item->save();
+        return redirect()->route('daftar-buku');
     }
     public function render()
     {
-        return view('livewire.admin.buku.ubah-buku')
+        $collection = Category::all();
+        return view('livewire.admin.buku.ubah-buku', compact('collection'))
             ->extends('adminlte::page')
             ->section('content');
     }
