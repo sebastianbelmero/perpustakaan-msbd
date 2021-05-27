@@ -25,6 +25,7 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
+                        <th style="width: 10px">No.</th>
                         <th>Nama Kategori</th>
                         <th style="width: 40px">Aksi</th>
                     </tr>
@@ -33,6 +34,7 @@
                 <tbody>
                     @foreach ($kategories as $kategori)
                     <tr>
+                        <td>{{ $no++ }}</td>
                         @if($updateId !== $kategori->id)
                         <td>{{ $kategori->nama }}</td>
                         <td class="d-flex">

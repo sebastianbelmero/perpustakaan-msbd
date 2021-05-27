@@ -5,8 +5,10 @@ namespace App\Http\Livewire\Admin\Buku;
 use App\Models\Book;
 use Livewire\Component;
 
+
 class UbahBuku extends Component
 {
+    public $idnya;
     public $idbukunya;
     public $tampil = 10;
     public $updateId = 0;
@@ -24,6 +26,7 @@ class UbahBuku extends Component
 
     public function mount($idnya)
     {
+        $this->idnya = $idnya;
         $item = Book::find($idnya);
         $this->judul = $item->judul;
         $this->isbn = $item->isbn;
@@ -36,6 +39,20 @@ class UbahBuku extends Component
         $this->email = $item->email;
         $this->jumlah = $item->jumlah;
         $this->kategori = $item->kategori;
+    }
+    public function updateBook()
+    {
+        $item = Book::find($this->idnya);
+        $item->judul = $this->judul;
+        $item->pengarang = $this->pengarang;
+        $item->tahun = $this->tahun;
+        $item->tgl_masuk = $this->tglMasuk;
+        $item->edisi = $this->edisi;
+        $item->website = $this->website;
+        $item->email = $this->email;
+        $item->jumlah = $this->jumlah;
+        $item->kategori = $this->kategori;
+        $item->save();
     }
     public function render()
     {

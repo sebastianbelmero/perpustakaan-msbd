@@ -32,7 +32,7 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th style="width: 10px">#</th>
+                        <th style="width: 10px">No.</th>
                         <th class="{{ $a ? '' : 'd-none' }}">Judul</th>
                         <th class="{{ $b ? '' : 'd-none' }}">ISBN</th>
                         <th class="{{ $c ? '' : 'd-none' }}">Penerbit</th>
@@ -47,6 +47,7 @@
                 <tbody>
                     @foreach ($collection as $item)
                     <tr>
+
                         <td>{{ $no++ }}</td>
 
                         <td class="{{ $a ? '' : 'd-none' }}">{{ Str::limit($item->judul, 50) }}</td>

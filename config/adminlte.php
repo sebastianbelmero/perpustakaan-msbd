@@ -253,19 +253,36 @@ return [
                 [
                     'text' => 'Tambah Buku',
                     'route' => 'pilih-buku',
-                    'icon' => 'fas fa-fw fa-book',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
                 [
                     'text' => 'Daftar Buku',
                     'route' => 'daftar-buku',
-                    'icon' => 'fas fa-fw fa-book',
+                    'icon' => 'fas fa-fw fa-list',
                 ],
             ]
         ],
         [
             'text' => 'Kategori',
             'route' => 'kategori',
-            'icon' => 'fas fa-fw fa-book',
+            'icon' => 'fas fa-fw fa-list-ol',
+        ],
+        ['header' => 'ANGGOTA'],
+        [
+            'text' => 'Anggota',
+            'icon' => 'fas fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Tambah Anggota',
+                    'route' => 'tambah-anggota',
+                    'icon' => 'fas fa-fw fa-user-plus',
+                ],
+                [
+                    'text' => 'Daftar Anggota',
+                    'route' => 'daftar-anggota',
+                    'icon' => 'fas fa-fw fa-address-book',
+                ],
+            ]
         ]
     ],
 

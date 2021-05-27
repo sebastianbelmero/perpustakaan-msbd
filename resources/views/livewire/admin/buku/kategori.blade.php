@@ -4,7 +4,7 @@
             <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label for="labelkategori">Nama Kategori</label>
-                    <input type="text" wire:model.defer="nama" class="form-control" id="labelkategori" placeholder="Nama Kategori" />
+                    <input type="text" wire:model.defer="nama" class="form-control" id="labelkategori" placeholder="Input Nama Kategori" />
                 </div>
             </div>
 
