@@ -29,7 +29,6 @@
                         <th>Nomor Induk</th>
                         <th>Nama Anggota</th>
                         <th>Kelas</th>
-                        <th>Email</th>
                         <th style="width: 40px">Aksi</th>
                     </tr>
                 </thead>
@@ -39,9 +38,8 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $member->nomor_induk }}</td>
-                        <td>{{ $member->name }}</td>
+                        <td>{{ $member->nama }}</td>
                         <td>{{ $member->kelas }}</td>
-                        <td>{{ $member->email }}</td>
                         <td class="d-flex">
                             <button onclick="return confirm('Apakah anda yakin ingin menghapus anggota {{ $member->nama }} ???') || event.stopImmediatePropagation()" wire:click="hapusAnggota({{ $member->id }})" class="btn btn-danger btn-sm text-white ml-2">Hapus</button>
                         </td>

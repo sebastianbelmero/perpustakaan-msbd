@@ -18,18 +18,6 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="form-group">
-                <label for="labelUsername">Username</label>
-                <input type="text" wire:model.defer="username" class="form-control" id="labelUsername" placeholder="Input Username" />
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="form-group">
-                <label for="labelPassword">Password</label>
-                <input type="password" wire:model.defer="password" class="form-control" id="labelPassword" placeholder="Input Password"/>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="form-group">
                 <label for="labelKelas">Kelas</label>
                 <select wire:model.defer="kelas" class="form-control">
                     <option value="">Pilih Kelas</option>
