@@ -56,17 +56,16 @@ DROP TABLE IF EXISTS `members`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `members` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_user` bigint(20) NOT NULL,
   `nomor_induk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kelas` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_lahir` date NOT NULL,
   `jenis_kelamin` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `members_nomor_induk_unique` (`nomor_induk`)
+  UNIQUE KEY `members_nomor_induk_unique` (`nomor_induk`),
+  KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `migrations`;
@@ -125,6 +124,20 @@ SET character_set_client = utf8;
   `kategori` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `v_members`;
+/*!50001 DROP VIEW IF EXISTS `v_members`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `v_members` (
+  `id` tinyint NOT NULL,
+  `name` tinyint NOT NULL,
+  `email` tinyint NOT NULL,
+  `nomor_induk` tinyint NOT NULL,
+  `kelas` tinyint NOT NULL,
+  `tgl_lahir` tinyint NOT NULL,
+  `jenis_kelamin` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 /*!50001 DROP TABLE IF EXISTS `v_books`*/;
 /*!50001 DROP VIEW IF EXISTS `v_books`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
@@ -136,6 +149,20 @@ SET character_set_client = @saved_cs_client;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_books` AS select `books`.`id` AS `id`,`books`.`isbn` AS `isbn`,`books`.`judul` AS `judul`,`books`.`penerbit` AS `penerbit`,`books`.`pengarang` AS `pengarang`,`books`.`tahun` AS `tahun`,`books`.`tgl_masuk` AS `tgl_masuk`,`books`.`edisi` AS `edisi`,`books`.`website` AS `website`,`books`.`email` AS `email`,`books`.`jumlah` AS `jumlah`,`categories`.`nama` AS `kategori` from (`books` left join `categories` on(`books`.`id_kategori` = `categories`.`id`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!50001 DROP TABLE IF EXISTS `v_members`*/;
+/*!50001 DROP VIEW IF EXISTS `v_members`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_members` AS select `users`.`id` AS `id`,`users`.`name` AS `name`,`users`.`email` AS `email`,`members`.`nomor_induk` AS `nomor_induk`,`members`.`kelas` AS `kelas`,`members`.`tgl_lahir` AS `tgl_lahir`,`members`.`jenis_kelamin` AS `jenis_kelamin` from (`users` join `members` on(`users`.`id` = `members`.`id_user`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -152,3 +179,4 @@ INSERT INTO `migrations` VALUES (3,'2019_08_19_000000_create_failed_jobs_table',
 INSERT INTO `migrations` VALUES (4,'2021_04_22_140352_create_books_table',1);
 INSERT INTO `migrations` VALUES (5,'2021_04_22_140410_create_categories_table',1);
 INSERT INTO `migrations` VALUES (6,'2021_05_27_025212_create_members_table',2);
+INSERT INTO `users` VALUES (1, 'admin', 'admin@admin.com', NULL, '$2y$10$o6BLXwx9R1Rh4aW01OvNfeML87nt5MWD.b1g1UYlfuA4w9uq6JBw.', 'admin', NULL, '2021-05-27 08:25:41', '2021-05-27 08:25:41');
