@@ -21,7 +21,7 @@ class Hubungi extends Component
     public function tambahSaran()
     {
         Suggestion::create([
-            'nama' => $this->name,
+            'nama' => $this->nama,
             'email' => $this->email,
             'pesan' => $this->pesan,
         ]);

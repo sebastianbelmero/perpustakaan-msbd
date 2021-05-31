@@ -29,15 +29,11 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      @livewireStyles
 </head>
 <!-- body -->
 
 <body class="main-layout">
-    <!-- loader  -->
-    <div class="loader_bg">
-        <div class="loader"><img src="{{asset('covido/images/loading.gif')}}" alt="#" /></div>
-    </div>
-    <!-- end loader -->
     <!-- top -->
     <!-- header -->
     <header class="header-area">
@@ -58,7 +54,7 @@
                     <div class="navbar-area">
                         <nav class="site-navbar">
                             <ul>
-                                <li><a class="active" href="index.html">Beranda</a></li>
+                                <li><a class="active" href="{{ route('inidepanwoiii') }}">Beranda</a></li>
                                 <li><a href="about.html">Koleksi</a></li>
                                 <li><a href="{{ route ('validasi-login')}}">Cek Pinjaman</a></li>
                                 {{-- <li><a href="index.html" class="logo_midle">covido</a></li> --}}
@@ -223,13 +219,15 @@
             </div>
         </div>
     </footer>
+
+    @livewireScripts
     <!-- end footer -->
     <!-- Javascript files-->
-    <script src="{{asset ('covido/js/jquery.min.js')}}"></script>
-    <script src="{{asset ('covido/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script src="{{asset ('covido/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset ('covido/js/custom.js')}}"></script>
+    <script src="{{asset ('covido/js/jquery.min.js')}}" defer></script>
+    <script src="{{asset ('covido/js/bootstrap.bundle.min.js')}}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js" defer></script>
+    <script src="{{asset ('covido/js/owl.carousel.min.js')}}" defer></script>
+    <script src="{{asset ('covido/js/custom.js')}}" defer></script>
 </body>
 
 </html>

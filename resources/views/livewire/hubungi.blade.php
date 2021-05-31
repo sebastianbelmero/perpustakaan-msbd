@@ -1,5 +1,3 @@
-@section('content')
-    <!-- contact -->
      <div class="contact">
          <div class="container">
             <div class="row">
@@ -31,6 +29,4 @@
             </div>
          </div>
       </div>
-      <!-- end contact -->
-@endsection
 

@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('depan');
-});
+})->name('inidepanwoiii');
 
 Auth::routes();
 
