@@ -9,6 +9,7 @@ use App\Http\Livewire\Admin\Buku\TambahBuku;
 use App\Http\Livewire\Admin\Buku\UbahBuku;
 use App\Http\Livewire\Admin\DaftarAnggota;
 use App\Http\Livewire\Admin\TambahAnggota;
+use App\Http\Livewire\Hubungi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,8 +44,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 Route::get('/bukan-admin', function () {
     return view('bukan-admin');
 })->name('bukan-admin');
+Route::get('/validasi-login', function () {
+    return view('validasi-login');
+})->name('validasi-login');
 Route::get('/tambah-anggota', TambahAnggota::class)->name('tambah-anggota');
 Route::get('/daftar-anggota', DaftarAnggota::class)->name('daftar-anggota');
+Route::get('/hubungi', Hubungi::class)->name('hubungi');
+
 // Route::get('/buku/edit-buku/{id}', function ($id) {
 //     return 'User ' . $id;
 // });

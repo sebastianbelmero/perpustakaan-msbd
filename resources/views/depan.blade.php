@@ -85,7 +85,7 @@
                                     <h3>Form Usulan</h3>
                                     <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
                                 </div>
-                                <a class="read_more" href="protect.html">Read More</a>
+                                <a class="read_more" href="{{ route ('validasi-login')}}">Read More</a>
                             </div>
                         </div>
                         <div class="item">
@@ -107,7 +107,7 @@
 </div>
 <!-- end protect -->
 <!-- cases -->
-<div class="cases">
+<!-- <div class="cases">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -150,10 +150,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- end cases -->
 <!-- doctors -->
-<div class="doctors">
+<!-- <div class="doctors">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -181,10 +181,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- end cases -->
 <!-- update -->
-<div class="update">
+<!-- <div class="update">
     <div class="cevery_white">
         <div class="container">
             <div class="row">
@@ -208,6 +208,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- update -->
 @stop
+
