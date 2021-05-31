@@ -59,7 +59,7 @@
                                 <li><a href="{{ route ('validasi-login')}}">Cek Pinjaman</a></li>
                                 {{-- <li><a href="index.html" class="logo_midle">covido</a></li> --}}
 
-                                <li><a href="{{ route('hubungi')}}">Hubungi </a></li>
+                                <li><a href="{{ route('hubungi')}}">Kontak </a></li>
                             </ul>
                             <button class="nav-toggler">
                                 <span></span>
@@ -150,7 +150,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="hedingh3 text_align_left">
+                        {{-- <div class="hedingh3 text_align_left">
                             <h3>Resources</h3>
                             <ul class="menu_footer">
                                 <li><a href="index.html">Home</a>
@@ -168,43 +168,43 @@
                             </ul>
 
 
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="hedingh3 text_align_left">
                             <h3>About</h3>
                             <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various</p>
                         </div>
-                    </div>
+                    </div> --}}
 
 
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="hedingh3  text_align_left">
-                            <h3>Contact Us</h3>
+                            <h3>Hubungi Kami</h3>
                             <ul class="top_infomation">
                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    Making this the first true
+                                    Jl. Bukit Barisan No. 34, Penyabungan, Mandailing Natal, Sumatera Utara
                                 </li>
                                 <li><i class="fa fa-phone" aria-hidden="true"></i>
-                                    Call : +01 1234567890
+                                    Telp : 636321589
                                 </li>
                                 <li><i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <a href="Javascript:void(0)">Email : demo@gmail.com</a>
+                                    <a href="Javascript:void(0)">Email : smpnegeri5panyabungan@gmail.com</a>
                                 </li>
                             </ul>
 
 
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="hedingh3 text_align_left">
                             <h3>countrys</h3>
                             <div class="map">
                                 <img src="{{asset ('covido/images/map.png')}}" alt="#" />
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
