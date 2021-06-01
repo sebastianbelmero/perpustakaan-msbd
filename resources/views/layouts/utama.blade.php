@@ -29,20 +29,30 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      @livewireStyles
+    @livewireStyles
 </head>
 <!-- body -->
 
 <body class="main-layout">
     <!-- top -->
     <!-- header -->
+
     <header class="header-area">
+
         <div class="left">
             <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
         </div>
         <div class="right">
+            @guest
             <a href="{{ route('login')}}"><i class="fa fa-user" aria-hidden="true"></i></a>
+             @else
+             <a href="#">{{ Auth::user()->name }}</a>
+            @endguest
+
+
         </div>
+
+
         <div class="container">
             <div class="row d_flex">
                 <div class="col-sm-3 logo_sm">
@@ -54,12 +64,39 @@
                     <div class="navbar-area">
                         <nav class="site-navbar">
                             <ul>
+                                @guest
                                 <li><a class="active" href="{{ route('inidepanwoiii') }}">Beranda</a></li>
-                                <li><a href="about.html">Koleksi</a></li>
+                                <li><a href="{{route('koleksi-buku')}}">Koleksi</a></li>
                                 <li><a href="{{ route ('validasi-login')}}">Cek Pinjaman</a></li>
+                                <li><a href="{{ route ('validasi-login')}}">Form Usulan</a></li>
                                 {{-- <li><a href="index.html" class="logo_midle">covido</a></li> --}}
 
                                 <li><a href="{{ route('hubungi')}}">Kontak </a></li>
+                                @else
+                                <li><a class="active" href="{{ route('inidepanwoiii') }}">Beranda</a></li>
+                                <li><a href="{{route('koleksi-buku')}}">Koleksi</a></li>
+                                <li><a href="{{ route ('validasi-login')}}">Peminjaman</a></li>
+                                {{-- <li><a href="index.html" class="logo_midle">covido</a></li> --}}
+
+                                <li><a href="#">Pembayaran</a></li>
+                                <li><a href="#">Denda</a></li>
+                                <li><a href="#">Usulan</a></li>
+
+                                <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                @endguest
+
                             </ul>
                             <button class="nav-toggler">
                                 <span></span>
@@ -90,7 +127,10 @@
                                     <div class="col-md-8">
                                         <div class="photog">
                                             <h1>Perpustakaan<br>SMPN 5 Penyabungan</h1>
+                                            @guest
                                             <a class="read_more" href="{{ route('login')}}">Login</a>
+                                            @else
+                                            @endguest
                                         </div>
                                     </div>
                                 </div>
@@ -105,8 +145,6 @@
                                     <div class="col-md-8">
                                         <div class="photog">
                                             <h1>Care early<br>Coronavirus</h1>
-                                            <a class="read_more" href="javascript:void(0)">Read More</a>
-                                            <a class="read_more" href="about.html">About Us</a>
                                         </div>
                                     </div>
                                 </div>
@@ -121,8 +159,6 @@
                                     <div class="col-md-8">
                                         <div class="photog">
                                             <h1>Care early<br>Coronavirus</h1>
-                                            <a class="read_more" href="javascript:void(0)">Read More</a>
-                                            <a class="read_more" href="about.html">About Us</a>
                                         </div>
                                     </div>
                                 </div>
@@ -202,21 +238,21 @@
                             <h3>countrys</h3>
                             <div class="map">
                                 <img src="{{asset ('covido/images/map.png')}}" alt="#" />
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            <p>© 2020 All Rights Reserved. Design by <a href="https://html.design/"> Free html Templates</a></p>
-                        </div>
+        </div> --}}
+
+        </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <p>© 2020 All Rights Reserved. Design by <a href="https://html.design/"> Free html Templates</a></p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </footer>
 

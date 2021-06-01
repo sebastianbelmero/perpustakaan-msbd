@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\Buku\UbahBuku;
 use App\Http\Livewire\Admin\DaftarAnggota;
 use App\Http\Livewire\Admin\TambahAnggota;
 use App\Http\Livewire\Hubungi;
+use App\Http\Livewire\Member\KoleksiBuku;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,7 @@ Route::get('/validasi-login', function () {
 Route::get('/tambah-anggota', TambahAnggota::class)->name('tambah-anggota');
 Route::get('/daftar-anggota', DaftarAnggota::class)->name('daftar-anggota');
 Route::get('/hubungi', Hubungi::class)->name('hubungi');
+Route::get('/koleksi-buku', KoleksiBuku::class)->name('koleksi-buku');
 
 // Route::get('/buku/edit-buku/{id}', function ($id) {
 //     return 'User ' . $id;

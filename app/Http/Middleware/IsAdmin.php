@@ -18,8 +18,8 @@ class IsAdmin
     {
         if ($request->user()->role == 'admin') {
             return $next($request);
-        }else{
-            return redirect()->route('bukan-admin');
+        } else {
+            return redirect()->route('inidepanwoiii');
         }
     }
 }
