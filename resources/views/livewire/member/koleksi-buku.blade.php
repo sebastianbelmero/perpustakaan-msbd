@@ -61,7 +61,8 @@
                                         <td class="{{ $f ? '' : 'd-none' }}">{{ $item->edisi }}</td>
                                         <td class="{{ $g ? '' : 'd-none' }}">{{ $item->kategori }}</td>
                                         <td>
-                                            <a href="3" class="btn btn-primary btn-sm text-white ml-1">Pinjam</a>
+                                            <a href="{{ route('detail-buku', $item->id) }}" class="btn btn-primary btn-sm text-white ml-1">Detail</a>
+                                            <a href="#" class="btn btn-primary btn-sm text-white ml-1">Pinjam</a>
                                         </td>
 
                                     </tr>
