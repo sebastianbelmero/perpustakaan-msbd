@@ -43,6 +43,10 @@
                             <th>Jumlah</td>
                             <td>{{$collection['jumlah']}}</td>
                         </tr>
+                        <tr>
+                            <th>Jumlah Tersedia</td>
+                            <td></td>
+                        </tr>
                     </table>
                 </div>
             </div>
