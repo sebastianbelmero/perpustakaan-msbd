@@ -44,9 +44,6 @@
                             <td>{{$collection['jumlah']}}</td>
                         </tr>
                     </table>
-
-print_r({{$collection}})
-                    <a class="read_more" href="about.html">About More</a>
                 </div>
             </div>
 
