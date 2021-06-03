@@ -267,6 +267,11 @@ return [
             'route' => 'kategori',
             'icon' => 'fas fa-fw fa-list-ol',
         ],
+        [
+            'text' => 'Usulan Buku',
+            'route' => 'daftar-usulan-buku',
+            'icon' => 'fas fa-fw fa-book-reader',
+        ],
         ['header' => 'ANGGOTA'],
         [
             'text' => 'Anggota',
@@ -283,6 +288,12 @@ return [
                     'icon' => 'fas fa-fw fa-address-book',
                 ],
             ]
+        ],
+        ['header' => 'SARAN DAN MASUKAN'],
+        [
+            'text' => 'Daftar Saran',
+            'route' => 'daftar-saran',
+            'icon' => 'fas fa-fw fa-comments',
         ]
     ],
 

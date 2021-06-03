@@ -69,24 +69,24 @@
                         <div class="item">
                             <div class="protect_box text_align_center">
                                 <div class="desktop">
-                                    <i><img src="{{asset('covido/images/pro1.png')}}" alt="#" /></i>
+                                    <i><img src="{{asset('covido/images/koleksi.jpg')}}" alt="#" /></i>
                                     <h3>Koleksi Buku</h3>
                                     <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
                                 </div>
-                                <a class="read_more" href="protect.html">Read More</a>
+                                <a class="read_more" href="{{ route ('koleksi-buku')}}">Detail</a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="protect_box text_align_center">
                                 <div class="desktop">
-                                    <i><img src="{{asset('covido/images/pro2.png')}}" alt="#" /></i>
+                                    <i><img src="{{asset('covido/images/usulan.jpg')}}" alt="#" /></i>
                                     <h3>Form Usulan</h3>
                                     <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
                                 </div>
                                 @guest
-                                <a class="read_more" href="{{ route ('validasi-login')}}">Read More</a>
+                                <a class="read_more" href="{{ route ('validasi-login')}}">Detail</a>
                                 @else
-                                <a class="read_more" href="{{ route ('form-usulan')}}">Read More</a>
+                                <a class="read_more" href="{{ route ('form-usulan')}}">Detail</a>
                                 @endguest
 
                             </div>
@@ -94,11 +94,15 @@
                         <div class="item">
                             <div class="protect_box text_align_center">
                                 <div class="desktop">
-                                    <i><img src="{{asset('covido/images/pro3.png')}}" alt="#" /></i>
-                                    <h3>SOP Sirkulasi</h3>
+                                    <i><img src="{{asset('covido/images/pinjam.jpg')}}" alt="#" /></i>
+                                    <h3>Cek Peminjaman</h3>
                                     <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
                                 </div>
-                                <a class="read_more" href="protect.html">Read More</a>
+                                @guest
+                                <a class="read_more" href="{{ route ('validasi-login')}}">Detail</a>
+                                @else
+                                <a class="read_more" href="#">Detail</a>
+                                @endguest
                             </div>
                         </div>
                     </div>

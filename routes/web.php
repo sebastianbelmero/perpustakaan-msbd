@@ -8,7 +8,9 @@ use App\Http\Livewire\Admin\Buku\PilihBuku;
 use App\Http\Livewire\Admin\Buku\TambahBuku;
 use App\Http\Livewire\Admin\Buku\UbahBuku;
 use App\Http\Livewire\Admin\DaftarAnggota;
+use App\Http\Livewire\Admin\DaftarSaran;
 use App\Http\Livewire\Admin\TambahAnggota;
+use App\Http\Livewire\Admin\DaftarUsulanBuku;
 use App\Http\Livewire\Hubungi;
 use App\Http\Livewire\Member\DetailBuku;
 use App\Http\Livewire\Member\FormUsulan;
@@ -45,6 +47,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/buku/kategori', function () {
         return view('admin/buku/kategori');
     })->name('kategori');
+    Route::get('/daftar-usulan-buku', DaftarUsulanBuku::class)->name('daftar-usulan-buku');
+    Route::get('/saran', DaftarSaran::class)->name('daftar-saran');
 });
 Route::get('/bukan-admin', function () {
     return view('bukan-admin');

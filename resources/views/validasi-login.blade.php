@@ -7,7 +7,8 @@
                 <div class="titlepage text_align_left">
                     <h2>Login</h2>
                     <p>
-                        Silahkan login terlebih dahulu untuk mengakses halaman ini
+                        Masukkan Nomor Induk dan Password yang diberikan oleh Perpustakaan. 
+                        <br>Jika Anda belum memiliki Password, silahkan hubungi Staf Perpustakaan.
                     </p>
 
                     <a class="read_more" href="{{route('login')}}">Login</a>
