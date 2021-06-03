@@ -11,7 +11,10 @@ use App\Http\Livewire\Admin\DaftarAnggota;
 use App\Http\Livewire\Admin\TambahAnggota;
 use App\Http\Livewire\Hubungi;
 use App\Http\Livewire\Member\DetailBuku;
+use App\Http\Livewire\Member\FormUsulan;
 use App\Http\Livewire\Member\KoleksiBuku;
+use App\Http\Livewire\Member\PilihUsulan;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -54,10 +57,7 @@ Route::get('/daftar-anggota', DaftarAnggota::class)->name('daftar-anggota');
 Route::get('/hubungi', Hubungi::class)->name('hubungi');
 Route::get('/koleksi-buku', KoleksiBuku::class)->name('koleksi-buku');
 Route::get('/koleksi-buku/detail-buku/{id}', DetailBuku::class)->name('detail-buku');
-// Route::get('/koleksi-buku/detail-buku/{id}', function () {
-//     return view('detail-buku');
-// })->name('detail-buku');
+Route::get('/pilih-usulan', PilihUsulan::class)->name('pilih-usulan');
+Route::get('/form-usulan', FormUsulan::class)->name('form-usulan');
 
-// Route::get('/buku/edit-buku/{id}', function ($id) {
-//     return 'User ' . $id;
-// });
+

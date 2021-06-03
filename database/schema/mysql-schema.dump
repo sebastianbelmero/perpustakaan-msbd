@@ -68,6 +68,20 @@ CREATE TABLE `members` (
   KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `isbn` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `penerbit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pengarang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -194,3 +208,5 @@ INSERT INTO `migrations` VALUES (5,'2021_04_22_140410_create_categories_table',1
 INSERT INTO `migrations` VALUES (6,'2021_05_27_025212_create_members_table',2);
 INSERT INTO `migrations` VALUES (7,'2021_05_31_122546_create_suggestions_table',3);
 INSERT INTO `migrations` VALUES (8,'2021_05_31_130410_create_suggestions_table',4);
+INSERT INTO `migrations` VALUES (9,'2021_06_03_014520_create_messages_table',5);
+INSERT INTO `migrations` VALUES (10,'2021_06_03_015327_create_messages_table',6);

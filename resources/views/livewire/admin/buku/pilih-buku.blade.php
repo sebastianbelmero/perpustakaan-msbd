@@ -4,7 +4,7 @@
             <label for="cari" class="display-4">Masukkan Judul/ISBN</label>
             <h1 class="text-center {{ isset($isbn) ? '' : 'd-none' }}">{{$isbn}}</h1>
             <div class="mb-3">
-                <a href="/buku/tambah-buku?isbn={{ $isbn }}" class="btn btn-primary {{ isset($isbn) ? '' : 'd-none' }}">lanjutkan <i class="fas fa-arrow-right"></i></a>
+                <a href="/member/form-usulan?isbn={{ $isbn }}" class="btn btn-primary {{ isset($isbn) ? '' : 'd-none' }}">lanjutkan <i class="fas fa-arrow-right"></i></a>
             </div>
             {{-- <h1 class="text-center d-none" wire:loading wire:loading.class="d-block" wire:loading.class.remove="d-none" wire:target="pilih()">Loading...</h1> --}}
             <input wire:model="judul" type="text" class="form-control" id="cari">

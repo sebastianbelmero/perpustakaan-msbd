@@ -85,7 +85,12 @@
                                     <h3>Form Usulan</h3>
                                     <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
                                 </div>
+                                @guest
                                 <a class="read_more" href="{{ route ('validasi-login')}}">Read More</a>
+                                @else
+                                <a class="read_more" href="{{ route ('pilih-usulan')}}">Read More</a>
+                                @endguest
+
                             </div>
                         </div>
                         <div class="item">
@@ -211,4 +216,3 @@
 </div> -->
 <!-- update -->
 @stop
-
