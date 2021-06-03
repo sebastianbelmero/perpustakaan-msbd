@@ -57,7 +57,6 @@ Route::get('/daftar-anggota', DaftarAnggota::class)->name('daftar-anggota');
 Route::get('/hubungi', Hubungi::class)->name('hubungi');
 Route::get('/koleksi-buku', KoleksiBuku::class)->name('koleksi-buku');
 Route::get('/koleksi-buku/detail-buku/{id}', DetailBuku::class)->name('detail-buku');
-Route::get('/pilih-usulan', PilihUsulan::class)->name('pilih-usulan');
 Route::get('/form-usulan', FormUsulan::class)->name('form-usulan');
 
 

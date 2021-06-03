@@ -15,8 +15,6 @@
                         <br>SK Izin Operasional : 420/602/K/2003
                         <br>Tanggal SK Izin Operasional : 2003-10-07
                     </p>
-
-                    <a class="read_more" href="about.html">About More</a>
                 </div>
             </div>
             <div class="col-md-5">
@@ -88,7 +86,7 @@
                                 @guest
                                 <a class="read_more" href="{{ route ('validasi-login')}}">Read More</a>
                                 @else
-                                <a class="read_more" href="{{ route ('pilih-usulan')}}">Read More</a>
+                                <a class="read_more" href="{{ route ('form-usulan')}}">Read More</a>
                                 @endguest
 
                             </div>

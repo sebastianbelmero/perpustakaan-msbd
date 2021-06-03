@@ -80,7 +80,7 @@
 
                                 <li><a href="#">Pembayaran</a></li>
                                 <li><a href="#">Denda</a></li>
-                                <li><a href="#">Usulan</a></li>
+                                <li><a href="{{ route ('form-usulan')}}">Usulan</a></li>
 
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
