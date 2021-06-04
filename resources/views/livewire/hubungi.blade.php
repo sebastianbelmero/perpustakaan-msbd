@@ -1,5 +1,3 @@
-@extends('layouts.utama')
-@section('content')
 <div class="contact">
    <div class="container">
       <div class="row">
@@ -31,6 +29,3 @@
       </div>
    </div>
 </div>
-
-
-@endsection

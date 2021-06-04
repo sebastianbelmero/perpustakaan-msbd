@@ -71,7 +71,7 @@
                                 <div class="desktop">
                                     <i><img src="{{asset('covido/images/koleksi.jpg')}}" alt="#" /></i>
                                     <h3>Koleksi Buku</h3>
-                                    <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
+                                    <span>Lihat seluruh koleksi buku yang ada di Perpustakaan SMPN 5 Penyabungan</span>
                                 </div>
                                 <a class="read_more" href="{{ route ('koleksi-buku')}}">Detail</a>
                             </div>
@@ -81,7 +81,7 @@
                                 <div class="desktop">
                                     <i><img src="{{asset('covido/images/usulan.jpg')}}" alt="#" /></i>
                                     <h3>Form Usulan</h3>
-                                    <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
+                                    <span>Usulkan buku yang Anda butuhkan dalam menunjang pembelajaran atau juga buku yang bersifat umum</span>
                                 </div>
                                 @guest
                                 <a class="read_more" href="{{ route ('validasi-login')}}">Detail</a>
@@ -96,7 +96,7 @@
                                 <div class="desktop">
                                     <i><img src="{{asset('covido/images/pinjam.jpg')}}" alt="#" /></i>
                                     <h3>Cek Peminjaman</h3>
-                                    <span> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</span>
+                                    <span>Lakukan pengecekan peminjaman buku maupun denda dari buku yang telah dipinjam</span>
                                 </div>
                                 @guest
                                 <a class="read_more" href="{{ route ('validasi-login')}}">Detail</a>

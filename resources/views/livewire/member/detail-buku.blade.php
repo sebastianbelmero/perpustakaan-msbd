@@ -1,5 +1,3 @@
-@extends('layouts.utama')
-@section('content')
 <div class="about mb-5">
     <div class="container_width">
         <div class="row d_flex">
@@ -54,5 +52,3 @@
         </div>
     </div>
 </div>
-
-@endsection

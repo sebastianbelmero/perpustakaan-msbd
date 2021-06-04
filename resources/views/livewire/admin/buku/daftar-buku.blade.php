@@ -1,4 +1,5 @@
 <div>
+    <h2>Daftar Buku</h2>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Menampilkan {{ $ada }} dari {{ $data }}</h3>
