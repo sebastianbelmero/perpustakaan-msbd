@@ -45,8 +45,8 @@
         <div class="right">
             @guest
             <a href="{{ route('login')}}"><i class="fa fa-user" aria-hidden="true"></i></a>
-             @else
-             <a href="#">{{ Auth::user()->name }}</a>
+            @else
+            <a href="#">{{ Auth::user()->name }}</a>
             @endguest
 
 
@@ -55,11 +55,6 @@
 
         <div class="container">
             <div class="row d_flex">
-                <div class="col-sm-3 logo_sm">
-                    {{-- <div class="logo">
-                        <a href="index.html"></a>
-                     </div> --}}
-                </div>
                 <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-9">
                     <div class="navbar-area">
                         <nav class="site-navbar">

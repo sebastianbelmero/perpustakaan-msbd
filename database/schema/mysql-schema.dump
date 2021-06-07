@@ -210,3 +210,4 @@ INSERT INTO `migrations` VALUES (7,'2021_05_31_122546_create_suggestions_table',
 INSERT INTO `migrations` VALUES (8,'2021_05_31_130410_create_suggestions_table',4);
 INSERT INTO `migrations` VALUES (9,'2021_06_03_014520_create_messages_table',5);
 INSERT INTO `migrations` VALUES (10,'2021_06_03_015327_create_messages_table',6);
+INSERT INTO `users` VALUES (1, 'admin', 'admin@admin.com', NULL, '$2y$10$LziUx64/UzAHnm5VDd0J7.4w5KLZx55Vs1XLaiVlNWRYhY.HvNkga', 'admin', NULL, '2021-06-06 08:43:46', '2021-06-06 08:43:46');

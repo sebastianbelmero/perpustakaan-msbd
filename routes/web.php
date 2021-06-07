@@ -16,6 +16,12 @@ use App\Http\Livewire\Member\DetailBuku;
 use App\Http\Livewire\Member\FormUsulan;
 use App\Http\Livewire\Member\KoleksiBuku;
 use App\Http\Livewire\Member\PilihUsulan;
+use App\Http\Livewire\Pages\Denda;
+use App\Http\Livewire\Pages\Home;
+use App\Http\Livewire\Pages\Koleksi;
+use App\Http\Livewire\Pages\Pembayaran;
+use App\Http\Livewire\Pages\Peminjaman;
+use App\Http\Livewire\Pages\Usulan;
 use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +40,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('depan');
 })->name('inidepanwoiii');
+Route::get('/kindle', function () {
+    return view('layouts/kindle');
+})->name('kindle');
 
 Auth::routes();
 
@@ -50,6 +59,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/daftar-usulan-buku', DaftarUsulanBuku::class)->name('daftar-usulan-buku');
     Route::get('/saran', DaftarSaran::class)->name('daftar-saran');
 });
+
 Route::get('/bukan-admin', function () {
     return view('bukan-admin');
 })->name('bukan-admin');
@@ -62,5 +72,16 @@ Route::get('/hubungi', Hubungi::class)->name('hubungi');
 Route::get('/koleksi-buku', KoleksiBuku::class)->name('koleksi-buku');
 Route::get('/koleksi-buku/detail-buku/{id}', DetailBuku::class)->name('detail-buku');
 Route::get('/form-usulan', FormUsulan::class)->name('form-usulan');
+
+
+Route::get('/halaman-depan', Home::class)->name('halaman-depan');
+Route::get('/halaman-depan/koleksi', Koleksi::class)->name('halaman-depan.koleksi');
+Route::get('/halaman-depan/peminjaman', Peminjaman::class)->name('halaman-depan.peminjaman');
+Route::get('/halaman-depan/pembayaran', Pembayaran::class)->name('halaman-depan.pembayaran');
+Route::get('/halaman-depan/denda', Denda::class)->name('halaman-depan.denda');
+Route::get('/halaman-depan/usulan', Usulan::class)->name('halaman-depan.usulan');
+
+Route::middleware(['auth', 'isAdmin: user'])->group(function () {
+});
 
 
